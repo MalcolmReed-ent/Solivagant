@@ -13,6 +13,26 @@ solivagant is a converted implementation of EPR and EPY written in C. It handles
 
 This project is a rewrite of the original application, focusing on core functionality rather than advanced features. Currently, it allows users to open and display various EPUB files, although the formatting may not be optimal and the interface is quite basic. While it lacks features like bookmarking, speed reading, and extensive keybinds and features found in epr/epy, it successfully fulfills its primary purpose of providing a straightforward reading experience. This build prioritizes essential capabilities, and while it may not be polished or feature-rich, it effectively meets the basic needs of EPUB terminal/CLI reading for now.
 
+## About the name
+
+The journey to name this project was a wandering path of its own. Initially, I considered "epr-c" as a nod to the original project and to indicate its implementation in C. However, as the project evolved, I felt it needed a name that better captured its essence and purpose.
+
+After much contemplation, I settled on "Solivagant." This beautiful, obscure word perfectly encapsulates the experience of using this epub reader:
+
+1. **Meaning**: Solivagant means "wandering alone" or "a solitary wanderer."
+
+2. **Etymology**: It comes from Latin "solivagus," combining "solus" (alone) and "vagari" (to wander).
+
+3. **Why it fits**:
+   - Reading is often a solitary activity, a personal journey through worlds of words.
+   - Using a CLI reader is a more independent, "wandering" way to explore books compared to GUI applications.
+   - It evokes the idea of freely navigating through literature, choosing one's own path.
+   - The obscurity of the word mirrors the nature of CLI tools - not mainstream, but powerful for those who seek them out.
+
+"Solivagant" represents not just an epub reader, but a tool for solitary literary journeys. It's an invitation to wander alone through digital pages, embarking on adventures of the mind.
+
+In choosing this name, I hope to intrigue users, encouraging them to look up its meaning and, in doing so, begin their journey of discovery even before they start reading their first book with this tool.
+
 # Features
 
 - Dynamic terminal resizing with automatic ncurses refresh
