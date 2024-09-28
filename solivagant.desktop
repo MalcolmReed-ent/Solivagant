@@ -1,0 +1,10 @@
+# Set terminal for app launch in Exec line
+[Desktop Entry]
+Type=Application
+Name=solivagant
+GenericName=Epub Reader
+Comment=CLI Epub Reader
+Exec=st -e /usr/local/bin/solivagant %f
+Icon=solivagant.png
+Categories=Office;Viewer;
+MimeType=application/epub+zip;

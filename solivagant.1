@@ -1,0 +1,147 @@
+.TH SOLIVAGANT 1 solivagant\-1.0
+.SH NAME
+solivagant \- cli epub reader
+.SH SYNOPSIS
+.B solivagant
+.RB [ \-h ]
+.RB [ \-v ]
+.RB [ \-w
+.IR width ]
+.I epub_file
+.SH DESCRIPTION
+solivagant is a lightweight, C-written command-line EPUB viewer/reader that allows you to read EPUB files directly in your terminal.
+
+This project has been rewritten in C instead of Python and draws significant inspiration from Wustho (Benawi Adha) and his EPUB projects, including epr, epy, and baca. Specifically epr.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Display this help message
+.TP
+.BR \-v ", " \-\-version
+Display version information
+.TP
+.BR \-d ", " \-\-dump
+Dump the contents of the epub file
+.TP
+.BI \-w " width"
+Set the display width
+.SH KEYBINDINGS
+The following keybindings are defined in the configuration file:
+.TP
+.B n, Next Chapter
+Move to the next chapter
+.TP
+.B p, Previous Chapter
+Move to the previous chapter
+.TP
+.B Up Arrow Key, k
+Move up in the current chapter
+.TP
+.B Down Arrow Key, j
+Move down in the current chapter
+.TP
+.B Space, Right Arrow Key, l
+Move to the next page
+.TP
+.B Left Arrow Key, h
+Move to the previous page
+.TP
+.B g, Home Key
+Go to the beginning of the chapter
+.TP
+.B G, End Key
+Go to the end of the chapter
+.TP
+.B \-, Shrink
+Decrease the width of the text
+.TP
+.B +, Widen
+Increase the width of the text
+.TP
+.B =, Width
+Set a custom width for the text
+.TP
+.B m, Metadata
+Display book metadata
+.TP
+.B t, Tab, Table of Contents
+Open the table of contents
+.TP
+.B b, Set Bookmark
+Set a bookmark at the current position
+.TP
+.B `, Jump to Bookmark
+Jump to the set bookmark
+.TP
+.B c, Color Switch
+Switch between light and dark color schemes
+.TP
+.B q, Esc, Ctrl+C, Quit
+Exit the program
+.TP
+.B ?, Help
+Display help information
+.SH USAGE
+There are two ways of using solivagant: via the terminal and graphically.
+.SH Terminal Usage
+.TP
+solivagant <epub_file>
+Example: solivagant $HOME/dox/Ondaatje\,\ Michael\ -\ The\ English\ Patient.epub
+.SH Graphical Usage
+.TP
+Right-click an EPUB, select 'Open With Other Application...' and select 'solivagant' to open it. Ensure your preferred terminal is set in the solivagant.desktop file. It's currently set to Suckless Terminal (ST).
+.SH CONFIGURATION/CUSTOMIZATION
+The configuration and customization of this program use the config.h file and require (re)compiling the source code. This keeps it fast, secure, and simple.
+The file is located in the source directory under the name config.h. You can customize keybindings, color schemes, and other settings in this file.
+.SH COLOR SCHEME
+solivagant supports both light and dark color schemes:
+.TP
+.B Dark mode
+Foreground: 252, Background: 235
+.TP
+.B Light mode
+Foreground: 239, Background: 223
+.SH FILES
+.TP
+.I ~/solivagant/config.h
+User configuration file
+.TP
+.I ~/solivagant/main.c
+Main source file
+.TP
+.I ~/solivagant/epub.c
+EPUB handling source file
+.TP
+.I ~/solivagant/html_parser.c
+HTML parsing source file
+.TP
+.I ~/solivagant/reader.c
+Reader functionality source file
+.TP
+.I ~/solivagant/ui.c
+User interface source file
+.TP
+.I ~/solivagant/utils.c
+Utility functions source file
+.TP
+.I ~/solivagant/solivagant.jpg
+Logo
+.TP
+.I ~/solivagant/solivagant.1
+solivagant manual
+.TP
+.I ~/solivagant/README.md
+solivagant Readme File
+.TP
+.I ~/solivagant/solivagant.desktop
+solivagant Desktop File for GUI EPUB opening for terminal
+.SH AUTHOR
+Malcolm Reed <your.email@example.com>
+.SH BUGS
+Report bugs to: https://github.com/malcolmreed-ent/solivagant/issues
+.SH IMPROVEMENTS
+Report improvements to: https://github.com/malcolmreed-ent/solivagant/issues
+.SH COPYRIGHT
+Copyright © 2024 Malcolm Reed. License MIT: <https://opensource.org/licenses/MIT>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

@@ -1,0 +1,67 @@
+Release history for solivagant
+
+v1.0.00  2024-09-20
+====================
+
+[Changed]
+---------
+* Refactored the single-file program into multiple files for better organization and maintainability:
+  - main.c: Contains the main function and command-line argument parsing
+  - epub.c: Handles EPUB file operations and structure
+  - html_parser.c: Manages HTML parsing functionality
+  - reader.c: Implements the core reading functionality
+  - ui.c: Handles user interface elements
+  - utils.c: Contains utility functions
+  - config.h: Centralized configuration file
+
+* Updated Makefile to compile the new multi-file structure
+
+* Enhanced config.h with additional settings:
+  - Reader settings:
+    LINEPRSRV
+  - Key bindings:
+    SCROLL_DOWN, SCROLL_DOWN_J, SCROLL_UP, SCROLL_UP_K, HALF_DOWN, HALF_UP,
+    PAGE_DOWN, PAGE_UP, CH_NEXT, CH_PREV, CH_HOME, CH_END, SHRINK, WIDEN,
+    WIDTH, META, TOC, FOLLOW, QUIT, HELP, MARKPOS, JUMPTOPOS, COLORSWITCH
+  - Color settings:
+    DARK_FG, DARK_BG, LIGHT_FG, LIGHT_BG
+
+* Improved reader functionality in reader.c:
+  - Implemented centered text display using 2/3 of the screen width
+  - Enhanced word wrapping to prevent words from being cut off at line breaks
+  - Added automatic text adjustment when terminal size changes
+  - Improved key handling for better user interaction
+
+* Modified epub_parse_toc function in epub.c to parse the TOC file first and fallback to use the number of HTML files for chapter count
+
+[Fixed]
+-------
+* Resolved naming conflicts with system headers by renaming URL to PROJECT_URL
+* Added missing state constants (IN_TEXT, IN_TAG) to html_parser.h
+* Included necessary header files in appropriate source files
+* Fixed issues with text wrapping and display in the reader function
+
+[Added]
+-------
+* New files:
+  - main.c: Main program logic
+  - epub.c: EPUB handling
+  - html_parser.c: HTML parsing
+  - reader.c: Reading functionality
+  - ui.c: User interface
+  - utils.c: Utility functions
+  - config.h: Configuration file
+  - epub.h: EPUB structure and function declarations
+  - html_parser.h: HTML parsing declarations
+  - reader.h: Reader function declarations
+  - ui.h: UI function declarations
+  - utils.h: Utility function declarations
+
+* Updated man page (solivagant.1) with new keybindings and program structure
+
+* Added dynamic text centering and improved word wrapping in reader.c
+
+[Removed]
+---------
+* Removed single-file structure (solivagant.c) in favor of multi-file organization
+* Renamed solivagant.c to main.c

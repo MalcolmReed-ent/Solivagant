@@ -1,0 +1,56 @@
+Known Issues in solivagant
+==========================
+
+Metadata
+--------
+Description: 
+   Metadata display is currently a placeholder.
+
+Impact:
+   Low. This is primarily a preference for viewing book information.
+
+
+Compilation Issues with Certain CFLAGS
+--------------------------------------
+Description: 
+   The program compiles with current GCC flags, but using "-std=c99" 
+   breaks compilation. Adding "#define _POSIX_C_SOURCE 200809L" 
+   doesn't resolve the issue and causes further errors.
+   
+   Working CFLAGS:
+   CFLAGS = -Wall -g -O3 $(shell pkg-config --cflags libzip libxml-2.0 json-c)
+   
+   Non-working CFLAGS (from dwm):
+   CFLAGS = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os \
+   $(shell pkg-config --cflags libzip libxml-2.0 json-c)
+
+Impact:
+   Low if using default settings. May affect users on Gentoo or those 
+   who prefer to tweak compiler settings.
+
+
+Color Scheme Persistence
+------------------------
+Description:
+   When toggling the color scheme and then changing chapters, the terminal 
+   reverts to its default colors. This may be specific to certain terminal 
+   emulators (e.g., Suckless terminal).
+
+Impact:
+   Aesthetic only. Does not affect functionality.
+
+
+Table and Image Handling
+------------------------
+Description:
+   Tables and images in EPUB files are not currently supported or 
+   are poorly rendered in the text-based interface.
+
+Impact:
+   Books with significant visual elements or tabular data may lose 
+   important information or context.
+
+
+Note: We are actively working on resolving these issues. If you 
+encounter any additional bugs or have suggestions for improvements, 
+please report them to our issue tracker.
